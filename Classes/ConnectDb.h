@@ -5,7 +5,7 @@
 
 class ConnectDb {
 public:
-    ConnectDb();
+    ConnectDb(const QString &nameDb, const QString &sN);
     ~ConnectDb();
 private:
 };
