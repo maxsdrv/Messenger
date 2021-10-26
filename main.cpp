@@ -1,12 +1,22 @@
-#include <QCoreApplication>
-#include <QDebug>
-
+#include "mainwindow.h"
 #include "Classes/ConnectDb.h"
 
-int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+#include <QApplication>
+#include <QPushButton>
+#include <QMessageBox>
 
-    ConnectDb db("Messenger", "LOCALHOST\\SQLEXPRESS");
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.resize(1000, 1000);
+    w.show();
+    ConnectDb cc;
+    if (!cc.createConnect()) {
+        qDebug() << "ERROR\n";
+        return EXIT_FAILURE;
+    }
 
-    return 0;
+
+    return a.exec();
 }
