@@ -2,12 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMessageBox>
-#include <QCloseEvent>
-#include <QLabel>
-#include <QSharedPointer>
+#include "Classes/ConnectDb.h"
 
-
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -16,10 +15,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-//    void closeEvent(QCloseEvent* event);
+
+//    void closeEvent(QCloseEvent *event);
+
 private:
-    static void doDeleteLater(QLabel *label);
-//    QSharedPointer<QLabel> label;
-    std::shared_ptr<QLabel> label;
+    Ui::MainWindow *ui;
+    ConnectDb *m_connect;
+
 };
 #endif // MAINWINDOW_H

@@ -46,7 +46,8 @@ set(all_code_files
     ${SOURCE}
              main.cpp
              mainwindow.cpp
-             mainwindow.h)
+             mainwindow.h
+             mainwindow.ui)
 
 add_executable(${PROJECT_NAME} ${all_code_files})
 

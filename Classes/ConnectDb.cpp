@@ -32,6 +32,6 @@ bool ConnectDb::createConnect() {
 
 ConnectDb::~ConnectDb() {
     db.close();
-    qDebug() << "~ConnectDb()";
+    qInfo() << "~ConnectDb()";
 }
 

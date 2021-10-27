@@ -9,14 +9,15 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.resize(1000, 1000);
+    w.resize(800, 500);
     w.show();
-    ConnectDb cc;
-    if (!cc.createConnect()) {
-        qDebug() << "ERROR\n";
-        return EXIT_FAILURE;
-    }
-
+//    ConnectDb *cc = new ConnectDb();
+//    if (!cc->createConnect()) {
+//        qDebug() << "ERROR\n";
+//        delete cc;
+//        return EXIT_FAILURE;
+//    }
+//    delete cc;
 
     return a.exec();
 }

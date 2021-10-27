@@ -1,22 +1,31 @@
 #include "mainwindow.h"
-
+#include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-//    label = QSharedPointer<QLabel>(new QLabel(this), doDeleteLater);
-//    label = std::make_shared<QLabel>(this);
-//    label->setFrameStyle(QFrame::Panel || QFrame::Sunken);
-//    label->setText("Hello world");
-//    label->setAlignment(Qt::AlignBottom | Qt::AlignRight);
+    ui->setupUi(this);
 
+    connect (ui->cancelButton, SIGNAL(clicked()), ui->plainTextEdit, SLOT(clear()));
 
+    m_connect = new ConnectDb();
+    if (!m_connect->createConnect())
+    {
+        ui->statusbar->showMessage(tr("Error database connection"));
+    }
+    else
+    {
+        ui->statusbar->showMessage(tr("Connection successfull"));
+    }
 }
 
 MainWindow::~MainWindow()
 {
-    qDebug() << "~MainWindow()\n";
+    delete ui;
+    delete m_connect;
+    qInfo() << "~MainWindow()\n";
 }
+
 
 //void MainWindow::closeEvent(QCloseEvent *event)
 //{
@@ -32,9 +41,4 @@ MainWindow::~MainWindow()
 //    }
 //}
 
-void MainWindow::doDeleteLater(QLabel *label)
-{
-    qDebug() << "doDeleteLater()\n";
-    label->deleteLater();
-}
 
