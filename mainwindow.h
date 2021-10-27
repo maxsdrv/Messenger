@@ -22,5 +22,8 @@ private:
     Ui::MainWindow *ui;
     ConnectDb *m_connect;
 
+private slots:
+    void on_sendButton_clicked();
+    void on_cancelButton_clicked();
 };
 #endif // MAINWINDOW_H

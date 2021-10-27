@@ -6,8 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect (ui->cancelButton, SIGNAL(clicked()), ui->plainTextEdit, SLOT(clear()));
-
     m_connect = new ConnectDb();
     if (!m_connect->createConnect())
     {
@@ -17,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     {
         ui->statusbar->showMessage(tr("Connection successfull"));
     }
+
 }
 
 MainWindow::~MainWindow()
@@ -41,4 +40,16 @@ MainWindow::~MainWindow()
 //    }
 //}
 
+
+
+void MainWindow::on_sendButton_clicked()
+{
+    auto text_forDb = ui->plainTextEdit->toPlainText();
+    qDebug() << text_forDb << "\n";
+}
+
+void MainWindow::on_cancelButton_clicked()
+{
+    ui->plainTextEdit->clear();
+}
 
