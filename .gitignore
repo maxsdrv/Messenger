@@ -1,2 +1,3 @@
-/cmake-build-debug/
-/.cmake/
+Server/cmake-build-debug/
+Client/cmake-build-debug/
+Server/.cmake/
