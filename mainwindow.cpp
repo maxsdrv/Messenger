@@ -1,12 +1,13 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include <QSqlRecord>
+
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow), m_connect(new ConnectDb()), m_countMsg(0)
 {
     ui->setupUi(this);
 
-    m_connect = new ConnectDb();
     if (!m_connect->createConnect())
     {
         ui->statusbar->showMessage(tr("Error database connection"));
@@ -25,27 +26,35 @@ MainWindow::~MainWindow()
     qInfo() << "~MainWindow()\n";
 }
 
-
-//void MainWindow::closeEvent(QCloseEvent *event)
-//{
-//    QMessageBox::StandardButton resBtn =
-//            QMessageBox::question(this, "Messenger", tr("You sure?\n"),
-//            QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
-//            QMessageBox::Yes);
-//    if (resBtn != QMessageBox::Yes) {
-//        event->ignore();
-//    }
-//    else {
-//        event->accept();
-//    }
-//}
+const int MainWindow::getCountMsg()
+{
+    QSqlQuery query;
+    query.exec("select count (*) from UserMessages");
+    if (query.first()) {
+        m_countMsg = query.value(0).toInt();
+    }
+    return m_countMsg;
+}
 
 
 
 void MainWindow::on_sendButton_clicked()
 {
     auto text_forDb = ui->plainTextEdit->toPlainText();
-    qDebug() << text_forDb << "\n";
+    QSqlQuery query;
+
+    QString sQuery {"insert into UserMessages values(:id, :user_name, :text)"};
+    query.prepare(sQuery);
+    query.bindValue(":id", getCountMsg() + 1);
+    query.bindValue(":user_name", "PC");
+    query.bindValue(":text", text_forDb);
+
+    if (query.exec())
+    {
+        ui->statusbar->showMessage(tr("Message sent"));
+        qDebug() << "Record Inserted";
+    }
+
 }
 
 void MainWindow::on_cancelButton_clicked()

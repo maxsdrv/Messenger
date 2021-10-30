@@ -12,6 +12,7 @@ public:
     ConnectDb() = default;
     ~ConnectDb();
     bool createConnect();
+
 private:
     QSqlDatabase db;
 };

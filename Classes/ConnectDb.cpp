@@ -13,22 +13,10 @@ bool ConnectDb::createConnect() {
         qDebug() << db.lastError().text();
         return false;
     }
-    else {
-        QSqlQuery query;
-        if (query.exec("select * from UserMessages")) {
-            while (query.next()) {
-                qDebug() << query.value(1).toString() << query.value(2).toString();
-            }
-        }
-        else {
-            qDebug() << "QUERY doesn't processed\n";
-            qDebug() << db.lastError().text();
-            return false;
-        }
-    }
 
     return true;
 }
+
 
 ConnectDb::~ConnectDb() {
     db.close();

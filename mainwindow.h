@@ -16,12 +16,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-//    void closeEvent(QCloseEvent *event);
+    const int getCountMsg();
 
 private:
     Ui::MainWindow *ui;
     ConnectDb *m_connect;
-
+    int m_countMsg;
 private slots:
     void on_sendButton_clicked();
     void on_cancelButton_clicked();
