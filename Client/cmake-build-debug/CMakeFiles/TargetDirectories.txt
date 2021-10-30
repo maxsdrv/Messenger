@@ -1,0 +1,5 @@
+/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/Messenger_Viewer.dir
+/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/Messenger_Viewer_autogen_timestamp_deps.dir
+/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/Messenger_Viewer_autogen.dir
