@@ -1,4 +1,4 @@
-# Install script for directory: /home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer
+# Install script for directory: /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

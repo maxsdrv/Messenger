@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__Messenger_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/maxim/Qt/Tools/CMake/bin/cmake --regenerate-during-build -S/home/maxim/Cpp/qt-projects/database-multithread/Messenger -B/home/maxim/Cpp/qt-projects/database-multithread/Messenger/cmake-build-debug
+  command = /home/maxim/Qt/Tools/CMake/bin/cmake --regenerate-during-build -S/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server -B/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

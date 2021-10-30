@@ -1,11 +1,11 @@
 Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/maxim/Cpp/qt-projects/database-multithread/Messenger/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/maxim/Qt/Tools/Ninja/ninja cmTC_9550d && [1/2] Building CXX object CMakeFiles/cmTC_9550d.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_9550d
-FAILED: cmTC_9550d 
-: && /usr/bin/g++   CMakeFiles/cmTC_9550d.dir/src.cxx.o -o cmTC_9550d   && :
-/usr/bin/ld: CMakeFiles/cmTC_9550d.dir/src.cxx.o: in function `main':
+Run Build Command(s):/home/maxim/Qt/Tools/Ninja/ninja cmTC_37dc6 && [1/2] Building CXX object CMakeFiles/cmTC_37dc6.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_37dc6
+FAILED: cmTC_37dc6 
+: && /usr/bin/g++   CMakeFiles/cmTC_37dc6.dir/src.cxx.o -o cmTC_37dc6   && :
+/usr/bin/ld: CMakeFiles/cmTC_37dc6.dir/src.cxx.o: in function `main':
 src.cxx:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.cxx:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.cxx:(.text+0x5e): undefined reference to `pthread_cancel'

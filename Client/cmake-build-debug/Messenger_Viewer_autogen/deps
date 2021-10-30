@@ -1,10 +1,11 @@
 Messenger_Viewer_autogen/timestamp: \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/CMakeLists.txt \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/Classes/ConnectDb.h \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/Messenger_Viewer_autogen/moc_predefs.h \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/mainwindow.h \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/CMakeLists.txt \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/Classes/ConnectDb.h \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/CMakeFiles/FindThreads/CheckForPthreads.cxx \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/Messenger_Viewer_autogen/moc_predefs.h \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/mainwindow.h \
 	/home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QDebug \
 	/home/maxim/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
 	/home/maxim/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
@@ -184,23 +185,73 @@ Messenger_Viewer_autogen/timestamp: \
 	/home/maxim/Qt/6.1.2/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	/home/maxim/Qt/6.1.2/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/home/maxim/Qt/6.1.2/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeCXXCompiler.cmake.in \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeCXXInformation.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeCompilerIdDetection.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeDetermineCXXCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeDetermineCompileFeatures.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeDetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeDetermineCompilerABI.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeDetermineCompilerId.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeDetermineSystem.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeFindBinUtils.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeFindDependencyMacro.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeGenericSystem.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeNinjaFindMake.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeParseArguments.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeParseImplicitLinkInfo.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeSystem.cmake.in \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeTestCXXCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CMakeTestCompilerCommon.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CheckCXXCompilerFlag.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CheckCXXSourceCompiles.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CheckForPthreads.c \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CheckIncludeFile.cxx.in \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CheckIncludeFileCXX.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/CheckLibraryExists.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/GNU-FindBinUtils.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/GNU.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/TI-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/FeatureSummary.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/FindOpenGL.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/FindPackageHandleStandardArgs.cmake \
@@ -210,6 +261,8 @@ Messenger_Viewer_autogen/timestamp: \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/FindVulkan.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Internal/CheckCompilerFlag.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Internal/CheckSourceCompiles.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Internal/FeatureTesting.cmake \
+	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Platform/Linux-Determine-CXX.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake \
 	/home/maxim/Qt/Tools/CMake/share/cmake-3.19/Modules/Platform/Linux.cmake \
@@ -459,5 +512,5 @@ Messenger_Viewer_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/sys/types.h \
 	/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
 	/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
-	/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/mainwindow.ui \
+	/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/mainwindow.ui \
 	/home/maxim/Qt/Tools/CMake/bin/cmake

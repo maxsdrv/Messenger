@@ -1,1 +1,4 @@
-Server/
+/Server/cmake-build-debug/
+/Client/cmake-build-debug/
+/Server/CMakeLists.txt.user
+/Client/CMakeLists.txt.user

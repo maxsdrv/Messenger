@@ -1,6 +1,6 @@
-/home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/Messenger_Viewer_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/mainwindow.h \
-  /home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/cmake-build-debug/Messenger_Viewer_autogen/moc_predefs.h \
-  /home/maxim/Cpp/qt-projects/database-multithread/Messenger_Viewer/Classes/ConnectDb.h \
+/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/Messenger_Viewer_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/mainwindow.h \
+  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/cmake-build-debug/Messenger_Viewer_autogen/moc_predefs.h \
+  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Client/Classes/ConnectDb.h \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QDebug \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
