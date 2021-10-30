@@ -3,4 +3,4 @@ Make messenger, instead Server use SQL DataBase. Make two dialog windows, in one
 Use Qt.
 Use multithread to provide message flow without delay.
 Messages might be removed but only from dialog window not DataBase. It's like function "Clear".
-![win1_messenger](https://user-images.githubusercontent.com/34602478/139147983-feb25b41-bcb7-4725-a528-0e1b3ee7f95c.png)
+![messenger](https://user-images.githubusercontent.com/34602478/139538160-885b0ad3-ef3a-42c2-8470-c59efec3c03d.png)
