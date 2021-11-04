@@ -1,0 +1,19 @@
+# ninja log v5
+274	3099	1635885284803536265	CMakeFiles/Messenger.dir/main.cpp.o	6339e237338e4334
+4	274	1635885281983596918	Messenger_autogen/timestamp	1dec0892cc0969d4
+274	3174	1635885284879534630	CMakeFiles/Messenger.dir/Messenger_autogen/mocs_compilation.cpp.o	aaebaa4804504802
+4	1236	1635883755172347175	CMakeFiles/Messenger.dir/Classes/ConnectDb.cpp.o	e872a883357e5a4c
+274	3453	1635885285159528608	CMakeFiles/Messenger.dir/mainwindow.cpp.o	1f897c13844ba81
+4	2482	1635885470127538733	CMakeFiles/Messenger.dir/Classes/send.cpp.o	b0abed0eb94370cd
+156	1309	1635755487834753753	CMakeFiles/Messenger.dir/Classes/mythread.cpp.o	25b5c5aa9e34036b
+2482	2849	1635885470495530775	Messenger	3455659bae37429
+3	2495	1635885518502492064	CMakeFiles/Messenger.dir/Classes/send.cpp.o	b0abed0eb94370cd
+2495	2865	1635885518870484098	Messenger	3455659bae37429
+4	2412	1635885614456412793	CMakeFiles/Messenger.dir/Classes/send.cpp.o	b0abed0eb94370cd
+2412	2774	1635885614816404985	Messenger	3455659bae37429
+4	2458	1635885850823276797	CMakeFiles/Messenger.dir/Classes/send.cpp.o	b0abed0eb94370cd
+2459	2841	1635885851203268528	Messenger	3455659bae37429
+4	2537	1635885872914795964	CMakeFiles/Messenger.dir/Classes/send.cpp.o	b0abed0eb94370cd
+2537	2910	1635885873286787869	Messenger	3455659bae37429
+2	2490	1635885907922033784	CMakeFiles/Messenger.dir/Classes/send.cpp.o	b0abed0eb94370cd
+2490	2865	1635885908294025683	Messenger	3455659bae37429

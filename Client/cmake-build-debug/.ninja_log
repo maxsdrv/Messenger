@@ -1,0 +1,13 @@
+# ninja log v5
+22	1291	1635605384326414625	CMakeFiles/Messenger_Viewer.dir/Messenger_Viewer_autogen/mocs_compilation.cpp.o	2c835bcb0c7a2777
+2	1294	1635605427553670026	CMakeFiles/Messenger_Viewer.dir/main.cpp.o	5659eaca37342a92
+134	1280	1635605010665122858	CMakeFiles/Messenger_Viewer.dir/Classes/ConnectDb.cpp.o	88ec547acf62d588
+23	1571	1635605384606409787	CMakeFiles/Messenger_Viewer.dir/mainwindow.cpp.o	306a6c43c741acb9
+1295	1624	1635605427881664396	Messenger_Viewer	52d40b6571bd3fc8
+3	22	1635605383058436541	Messenger_Viewer_autogen/timestamp	37db70903f69df6e
+2	169	1635611800378007728	Messenger_Viewer_autogen/timestamp	eaab3d628f2dce6d
+169	1250	1635611801457984638	CMakeFiles/Messenger_Viewer.dir/Classes/ConnectDb.cpp.o	88ec547acf62d588
+170	1445	1635611801649980535	CMakeFiles/Messenger_Viewer.dir/Messenger_Viewer_autogen/mocs_compilation.cpp.o	2c835bcb0c7a2777
+170	1507	1635611801713979165	CMakeFiles/Messenger_Viewer.dir/main.cpp.o	5659eaca37342a92
+170	1758	1635611801961973863	CMakeFiles/Messenger_Viewer.dir/mainwindow.cpp.o	306a6c43c741acb9
+1758	2075	1635611802277967107	Messenger_Viewer	52d40b6571bd3fc8
