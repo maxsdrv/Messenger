@@ -201,6 +201,7 @@
 #define __DEC128_MIN_EXP__ (-6142)
 #define __FLT32_MAX_10_EXP__ 38
 #define __INT_FAST32_TYPE__ long int
+#define QT_CONCURRENT_LIB 1
 #define __UINT_LEAST16_TYPE__ short unsigned int
 #define __FLT64X_HAS_INFINITY__ 1
 #define unix 1

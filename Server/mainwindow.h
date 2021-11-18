@@ -6,7 +6,8 @@
 #include <QSharedPointer>
 
 #include "Classes/ConnectDb.h"
-#include "Classes/send.h"
+#include "Classes/mythread.h"
+#include "Classes/mythread2.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,21 +20,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    const int getCountMsg();
-
 private:
     Ui::MainWindow *ui;
-    ConnectDb *m_connect;
-    QThread thread_1;
-    QThread thread_2;
+    QThread th1;
+    QThread th2;
 
-    Send *m_Send1;
-    Send *m_Send2;
-
-    int m_countMsg;    
-signals:
-
+    MyThread2 *m_thread1;
+    MyThread2 *m_thread2;
+public slots:
+    void start();
 private slots:
     void on_sendButton_clicked();
     void on_clearButton_clicked();

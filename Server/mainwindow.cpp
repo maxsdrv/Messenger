@@ -1,93 +1,70 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include <QSqlRecord>
+
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), m_countMsg(0)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-//    if (!m_connect->createConnect())
+//    int index = 0;
+//    for (;;)
 //    {
-//        ui->statusbar->showMessage(tr("Error database connection"));
+//        MyThread *my_thread = new MyThread;
+//        my_thread->setAutoDelete(true);
+//        my_thread->setType(index);
+//        QThreadPool::globalInstance()->start(my_thread);
+
+//        ++index;
+//        if (index > 3)
+//            index = 0;
 //    }
-//    else
-//    {
-//        ui->statusbar->showMessage(tr("Connection successfull"));
-//    }
 
-//    QString dsn = QString ("DRIVER=ODBC Driver 17 for SQL Server;"
-//                           "Server=192.168.0.123;Database=Messenger;"
-//                           "Uid=sa;Pwd=DataSciec2019");
+    m_thread1 = new MyThread2("thread1");
+    m_thread2 = new MyThread2("thread2");
 
-//    m_connect = new ConnectDb(dsn);
-//    QSqlDatabase threadDb = m_connect->createConnect();
+    m_thread1->moveToThread(&th1);
+    m_thread2->moveToThread(&th2);
 
-    m_Send1 = new Send;
-    m_Send2 = new Send;
-
-    connect(&thread_1, &QThread::started, m_Send1, &Send::run);
-    connect(&thread_2, &QThread::started, m_Send2, &Send::run);
-
-    connect(m_Send1, &Send::stopSignal, &thread_1, &QObject::deleteLater);
-    connect(m_Send2, &Send::stopSignal, &thread_2, &QObject::deleteLater);
-
-    connect(m_Send1, &Send::sendMessage, m_Send2, &Send::setMessage2, Qt::QueuedConnection);
-
-    m_Send1->moveToThread(&thread_1);
-    m_Send2->moveToThread(&thread_2);
-
-
+    th1.start();
+    th2.start();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete m_connect;
-    delete m_Send1;
-    delete m_Send2;
+
+    th1.quit();
+    th1.wait();
+    th2.quit();
+    th2.wait();
 
     qInfo() << "~MainWindow()\n";
 
 }
 
-const int MainWindow::getCountMsg()
+void MainWindow::start()
 {
-    QSqlQuery query;
-    query.exec("select count (*) from UserMessages");
-    if (query.first()) {
-        m_countMsg = query.value(0).toInt();
-    }
-    return m_countMsg;
+    QMetaObject::invokeMethod(m_thread1, "test_query");
+    QMetaObject::invokeMethod(m_thread2, "test_query");
 }
-
-
 
 void MainWindow::on_sendButton_clicked()
 {
-//    auto text_forDb = ui->plainTextEdit->toPlainText();
-//    QSqlQuery query;
+    ui->plainTextEdit->appendPlainText("UI Thread ID: " +
+                                       QString::number(*static_cast<int*>(QThread::currentThreadId()), 16));
 
-//    QString sQuery {"insert into UserMessages values(:id, :user_name, :text)"};
-//    query.prepare(sQuery);
-//    query.bindValue(":id", getCountMsg() + 1);
-//    query.bindValue(":user_name", "PC");
-//    query.bindValue(":text", text_forDb);
+    start();
 
-//    if (query.exec())
-//    {
-//        ui->statusbar->showMessage(tr("Message sent"));
-//        qDebug() << "Record Inserted";
-//    }
+    connect(&th1, &QThread::finished, &th1, &QThread::deleteLater);
+    connect(&th2, &QThread::finished, &th2, &QThread::deleteLater);
 
-    m_Send1->setMessage(ui->plainTextEdit->toPlainText());
-
-    m_Send1->setRunning(true);
-    m_Send2->setRunning(true);
-
-    thread_1.start();
-    thread_2.start();
+    connect(m_thread1, &MyThread2::query_result, this, [this](const QString &result) {
+       ui->plainTextEdit->appendPlainText(result);
+    });
+    connect(m_thread2, &MyThread2::query_result, this, [this](const QString &result) {
+       ui->plainTextEdit->appendPlainText(result);
+    });
 }
 
 void MainWindow::on_clearButton_clicked()
@@ -97,10 +74,6 @@ void MainWindow::on_clearButton_clicked()
 
 void MainWindow::on_exitButton_clicked()
 {
-    thread_1.wait();
-    thread_2.wait();
-    thread_1.quit();
-    thread_2.quit();
+
     this->close();
 }
-

@@ -24,8 +24,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #    endif()
 #endif()
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Sql REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Sql REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Sql Concurrent REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Sql Concurrent REQUIRED)
 
 
 #record sources, headers, resources
@@ -35,12 +35,14 @@ set(RES_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}../Resources")
 
 # add cross-platforms source files and header files
 list(APPEND SOURCE
-        Classes/ConnectDb.cpp
-        Classes/send.cpp)
+    Classes/ConnectDb.cpp
+    Classes/mythread.cpp
+    Classes/mythread2.cpp)
 
 list(APPEND HEADER
-     Classes/ConnectDb.h
-     Classes/send.h)
+    Classes/ConnectDb.h
+    Classes/mythread.h
+    Classes/mythread2.h)
 
 # mark app compile info and libs info
 set(all_code_files
@@ -55,7 +57,8 @@ add_executable(${PROJECT_NAME} ${all_code_files})
 
 
 
-target_link_libraries(Messenger PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql)
+target_link_libraries(Messenger PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql
+    Qt6::Concurrent)
 
 set_target_properties(Messenger PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

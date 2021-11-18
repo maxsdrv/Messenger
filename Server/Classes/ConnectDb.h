@@ -6,16 +6,22 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QSqlQuery>
+#include <QMutex>
+#include <QThread>
+#include <QFuture>
+#include <QtConcurrent>
 
-class ConnectDb {
+class ConnectDb : public QObject {
+    Q_OBJECT
 public:
-    ConnectDb(const QString& dbName);
+    explicit ConnectDb(QObject* parent = nullptr);
     ~ConnectDb();
-    QSqlDatabase createConnect();
-
+public slots:
+    void init();
+    void log(const QString& msg);
 private:
-    QSqlDatabase db;
-    QString m_DbName;
+    QMutex _mx;
+    QSqlDatabase m_connection;
 };
 
 

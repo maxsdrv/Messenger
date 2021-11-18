@@ -1,47 +1,44 @@
 #include "ConnectDb.h"
 
-#include <QThread>
 
-ConnectDb::ConnectDb(const QString& dbName) : m_DbName(dbName) {}
+ConnectDb::ConnectDb(QObject *parent)
+{
+    qDebug("ConnectDb()");
+}
 
-QSqlDatabase ConnectDb::createConnect() {
-//    db = QSqlDatabase::addDatabase("QODBC"); //declare which driver we will use
+ConnectDb::~ConnectDb()
+{
+    QMutexLocker locker(&_mx);
+    QThread::msleep(500);
+    qDebug("~ConnectDb()");
+}
 
-//    db.setUserName("sa");
-//    db.setDatabaseName("ServerDSN"); //etc/odbc.ini
-//    db.setPassword("DataSciec2019");
+void ConnectDb::init()
+{
+    QMutexLocker locker(&_mx);
 
-//    if (!db.open()) {
-//        qDebug() << db.lastError().text();
-//        return false;
-//    }
-
-//    return true;
-
-
-
-
-    QString dbName = QStringLiteral("%1_%2").arg(m_DbName).arg(qintptr(QThread::currentThreadId()), 0, 16);
-    if(QSqlDatabase::contains(dbName))
-    {
-        db = QSqlDatabase::database(dbName);
+    QSqlDatabase m_connection = QSqlDatabase::addDatabase("QODBC", "main-connection");
+    m_connection.setDatabaseName("ServerDSN");
+    m_connection.setUserName("SA");
+    m_connection.setPassword("DataSciec2019");
+    if (m_connection.contains("ServerDSN")) {
+        qDebug("Error database has been already");
     }
+    if (!m_connection.open()) {
+        qDebug() << "ERROR" << m_connection.lastError().text();
+    }
+
+
     else {
-        db = QSqlDatabase::addDatabase(QStringLiteral("QODBC"), dbName);
-        db.setUserName("sa");
-        db.setDatabaseName("ServerDSN");
-        db.setPassword("DataSciec2019");
-        if (!db.open()) {
-            qDebug() << db.lastError().text();
-        }
-        else qDebug() << "Connection to database successfull\n";
+        qDebug() << "SUCCESSFULL";
     }
-    return db;
+
 }
 
-
-ConnectDb::~ConnectDb() {
-    db.close();
-    qInfo() << "~ConnectDb()";
+void ConnectDb::log(const QString& msg)
+{
+    QThread::msleep(500);
+    qDebug() << "ConnectDb::log()" << msg;
 }
+
 

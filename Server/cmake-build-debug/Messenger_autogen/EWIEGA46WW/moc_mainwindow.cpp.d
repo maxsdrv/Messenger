@@ -1,9 +1,30 @@
 /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/cmake-build-debug/Messenger_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/mainwindow.h \
   /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/cmake-build-debug/Messenger_autogen/moc_predefs.h \
   /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/ConnectDb.h \
-  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/send.h \
+  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/mythread.h \
+  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/mythread2.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/QtConcurrent \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/QtConcurrentDepends \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtaskbuilder.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrent_global.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentcompilertest.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentfilter.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentfilterkernel.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentfunctionwrappers.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentiteratekernel.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentmap.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentmapkernel.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentmedian.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentreducekernel.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentrun.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentrunbase.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentstoredfunctioncall.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrenttask.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentthreadengine.h \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtconcurrentversion.h \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QDebug \
+  /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QFuture \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QMutex \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QObject \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
