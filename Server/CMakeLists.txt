@@ -35,14 +35,12 @@ set(RES_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}../Resources")
 
 # add cross-platforms source files and header files
 list(APPEND SOURCE
-    Classes/ConnectDb.cpp
-    Classes/mythread.cpp
-    Classes/mythread2.cpp)
+    Classes/sendingthread.cpp
+    Classes/gettingthread.cpp)
 
 list(APPEND HEADER
-    Classes/ConnectDb.h
-    Classes/mythread.h
-    Classes/mythread2.h)
+    Classes/sendingthread.h
+    Classes/gettingthread.h)
 
 # mark app compile info and libs info
 set(all_code_files

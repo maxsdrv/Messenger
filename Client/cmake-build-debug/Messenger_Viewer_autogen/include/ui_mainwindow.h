@@ -25,10 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionClear;
     QAction *actionExit;
-    QAction *actiongetMessage;
-    QAction *actiondeleteFromDatabase;
     QWidget *centralwidget;
     QPlainTextEdit *plainTextEdit;
     QMenuBar *menubar;
@@ -41,14 +38,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(800, 600);
-        actionClear = new QAction(MainWindow);
-        actionClear->setObjectName(QString::fromUtf8("actionClear"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
-        actiongetMessage = new QAction(MainWindow);
-        actiongetMessage->setObjectName(QString::fromUtf8("actiongetMessage"));
-        actiondeleteFromDatabase = new QAction(MainWindow);
-        actiondeleteFromDatabase->setObjectName(QString::fromUtf8("actiondeleteFromDatabase"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         plainTextEdit = new QPlainTextEdit(centralwidget);
@@ -69,11 +60,7 @@ public:
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menubar->addAction(menuFile->menuAction());
-        menuFile->addAction(actionClear);
         menuFile->addAction(actionExit);
-        toolBar->addAction(actiongetMessage);
-        toolBar->addAction(actionClear);
-        toolBar->addAction(actiondeleteFromDatabase);
         toolBar->addAction(actionExit);
 
         retranslateUi(MainWindow);
@@ -84,10 +71,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Viewer", nullptr));
-        actionClear->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
-        actiongetMessage->setText(QCoreApplication::translate("MainWindow", "getMessage", nullptr));
-        actiondeleteFromDatabase->setText(QCoreApplication::translate("MainWindow", "deleteFromDatabase", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi

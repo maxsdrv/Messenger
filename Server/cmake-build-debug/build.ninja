@@ -75,25 +75,17 @@ build CMakeFiles/Messenger.dir/Messenger_autogen/mocs_compilation.cpp.o: CXX_COM
   OBJECT_DIR = CMakeFiles/Messenger.dir
   OBJECT_FILE_DIR = CMakeFiles/Messenger.dir/Messenger_autogen
 
-build CMakeFiles/Messenger.dir/Classes/ConnectDb.cpp.o: CXX_COMPILER__Messenger_Debug ../Classes/ConnectDb.cpp || cmake_object_order_depends_target_Messenger
+build CMakeFiles/Messenger.dir/Classes/sendingthread.cpp.o: CXX_COMPILER__Messenger_Debug ../Classes/sendingthread.cpp || cmake_object_order_depends_target_Messenger
   DEFINES = -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Messenger.dir/Classes/ConnectDb.cpp.o.d
+  DEP_FILE = CMakeFiles/Messenger.dir/Classes/sendingthread.cpp.o.d
   FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I. -I../ -IMessenger_autogen/include -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtWidgets -isystem /home/maxim/Qt/6.1.2/gcc_64/include -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtCore -isystem /home/maxim/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtGui -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtSql -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent
   OBJECT_DIR = CMakeFiles/Messenger.dir
   OBJECT_FILE_DIR = CMakeFiles/Messenger.dir/Classes
 
-build CMakeFiles/Messenger.dir/Classes/mythread.cpp.o: CXX_COMPILER__Messenger_Debug ../Classes/mythread.cpp || cmake_object_order_depends_target_Messenger
+build CMakeFiles/Messenger.dir/Classes/gettingthread.cpp.o: CXX_COMPILER__Messenger_Debug ../Classes/gettingthread.cpp || cmake_object_order_depends_target_Messenger
   DEFINES = -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Messenger.dir/Classes/mythread.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++2a
-  INCLUDES = -I. -I../ -IMessenger_autogen/include -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtWidgets -isystem /home/maxim/Qt/6.1.2/gcc_64/include -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtCore -isystem /home/maxim/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtGui -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtSql -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent
-  OBJECT_DIR = CMakeFiles/Messenger.dir
-  OBJECT_FILE_DIR = CMakeFiles/Messenger.dir/Classes
-
-build CMakeFiles/Messenger.dir/Classes/mythread2.cpp.o: CXX_COMPILER__Messenger_Debug ../Classes/mythread2.cpp || cmake_object_order_depends_target_Messenger
-  DEFINES = -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Messenger.dir/Classes/mythread2.cpp.o.d
+  DEP_FILE = CMakeFiles/Messenger.dir/Classes/gettingthread.cpp.o.d
   FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I. -I../ -IMessenger_autogen/include -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtWidgets -isystem /home/maxim/Qt/6.1.2/gcc_64/include -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtCore -isystem /home/maxim/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtGui -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtSql -isystem /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent
   OBJECT_DIR = CMakeFiles/Messenger.dir
@@ -123,7 +115,7 @@ build CMakeFiles/Messenger.dir/mainwindow.cpp.o: CXX_COMPILER__Messenger_Debug .
 #############################################
 # Link the executable Messenger
 
-build Messenger: CXX_EXECUTABLE_LINKER__Messenger_Debug CMakeFiles/Messenger.dir/Messenger_autogen/mocs_compilation.cpp.o CMakeFiles/Messenger.dir/Classes/ConnectDb.cpp.o CMakeFiles/Messenger.dir/Classes/mythread.cpp.o CMakeFiles/Messenger.dir/Classes/mythread2.cpp.o CMakeFiles/Messenger.dir/main.cpp.o CMakeFiles/Messenger.dir/mainwindow.cpp.o | /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Widgets.so.6.1.2 /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Sql.so.6.1.2 /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Concurrent.so.6.1.2 /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Gui.so.6.1.2 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Core.so.6.1.2 || Messenger_autogen Messenger_autogen_timestamp_deps
+build Messenger: CXX_EXECUTABLE_LINKER__Messenger_Debug CMakeFiles/Messenger.dir/Messenger_autogen/mocs_compilation.cpp.o CMakeFiles/Messenger.dir/Classes/sendingthread.cpp.o CMakeFiles/Messenger.dir/Classes/gettingthread.cpp.o CMakeFiles/Messenger.dir/main.cpp.o CMakeFiles/Messenger.dir/mainwindow.cpp.o | /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Widgets.so.6.1.2 /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Sql.so.6.1.2 /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Concurrent.so.6.1.2 /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Gui.so.6.1.2 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Core.so.6.1.2 || Messenger_autogen Messenger_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/maxim/Qt/6.1.2/gcc_64/lib  /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Widgets.so.6.1.2  /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Sql.so.6.1.2  /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Concurrent.so.6.1.2  /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Gui.so.6.1.2  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /home/maxim/Qt/6.1.2/gcc_64/lib/libQt6Core.so.6.1.2  -pthread
   OBJECT_DIR = CMakeFiles/Messenger.dir

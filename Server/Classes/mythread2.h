@@ -10,6 +10,7 @@ class MyThread2 : public QObject
     Q_OBJECT
 public:
     explicit MyThread2(const QString &connectionName);
+    ~MyThread2();
 signals:
     void query_result(const QString &result);
 public slots:

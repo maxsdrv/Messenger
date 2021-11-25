@@ -7,22 +7,18 @@
 #include "ConnectDb.h"
 
 
-class MyThread : public QObject, public QRunnable
+class MyThread : public QObject
 {
     Q_OBJECT
 public:
-    explicit MyThread(QObject *parent = nullptr);
+    explicit MyThread(const QString &connectionName);
     ~MyThread();
-    void setType(const int &type);
-protected:
-    void run();
+signals:
+    void msg_result(const QString &msg);
+public slots:
+    void send_msg();
 private:
-    void thread1Worker();
-    void thread2Worker();
-    void thread3Worker();
-    void thread4Worker();
-private:
-    int m_type;
+    QSqlDatabase m_database;
 };
 
 #endif // MYTHREAD_H

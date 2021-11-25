@@ -16,21 +16,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    const int getCountRow();
-
 private slots:
-    void on_actiongetMessage_triggered();
-
-    void on_actionClear_triggered();
-
-    void on_actiondeleteFromDatabase_triggered();
-
     void on_actionExit_triggered();
-
 private:
-    ConnectDb *m_connectDb;
     Ui::MainWindow *ui;
-    int m_rowCount;
+    QThread th1;
+    QThread th2;
+    ConnectDb *m_thread1;
+public slots:
+    void start();
 };
 #endif // MAINWINDOW_H

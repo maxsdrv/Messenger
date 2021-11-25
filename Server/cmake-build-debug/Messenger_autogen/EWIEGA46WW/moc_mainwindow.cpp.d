@@ -1,8 +1,8 @@
 /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/cmake-build-debug/Messenger_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/mainwindow.h \
   /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/cmake-build-debug/Messenger_autogen/moc_predefs.h \
   /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/ConnectDb.h \
-  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/mythread.h \
-  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/mythread2.h \
+  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/gettingthread.h \
+  /home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/sendingthread.h \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/QtConcurrent \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/QtConcurrentDepends \
   /home/maxim/Qt/6.1.2/gcc_64/include/QtConcurrent/qtaskbuilder.h \

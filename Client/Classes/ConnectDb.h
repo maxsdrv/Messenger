@@ -6,14 +6,21 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QSqlQuery>
+#include <QMutex>
+#include <QThread>
+#include <QRunnable>
 
-class ConnectDb {
+class ConnectDb : public QObject {
+    Q_OBJECT
 public:
-    ConnectDb() = default;
+    explicit ConnectDb(const QString &connectionName);
     ~ConnectDb();
-    bool createConnect();
+signals:
+    void msgResult(const QString &result);
+public slots:
+    void getMsg();
 private:
-    QSqlDatabase db;
+    QSqlDatabase m_database;
 };
 
 

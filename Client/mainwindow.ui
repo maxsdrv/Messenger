@@ -38,7 +38,6 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionClear"/>
     <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
@@ -54,29 +53,11 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actiongetMessage"/>
-   <addaction name="actionClear"/>
-   <addaction name="actiondeleteFromDatabase"/>
    <addaction name="actionExit"/>
   </widget>
-  <action name="actionClear">
-   <property name="text">
-    <string>Clear</string>
-   </property>
-  </action>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
-   </property>
-  </action>
-  <action name="actiongetMessage">
-   <property name="text">
-    <string>getMessage</string>
-   </property>
-  </action>
-  <action name="actiondeleteFromDatabase">
-   <property name="text">
-    <string>deleteFromDatabase</string>
    </property>
   </action>
  </widget>

@@ -2,74 +2,54 @@
 #include "./ui_mainwindow.h"
 
 #include <QSqlRecord>
-#include <algorithm>
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow), m_connectDb(new ConnectDb()), m_rowCount(0)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setCentralWidget(ui->plainTextEdit);
 
-    if (!m_connectDb->createConnect())
-    {
-        ui->statusbar->showMessage(tr("Error database connection"));
-    }
-    else
-    {
-        ui->statusbar->showMessage(tr("Connection successfull"));
-    }
+    m_thread1 = new ConnectDb("thread2");
+    m_thread1->moveToThread(&th1);
+
+    th1.start();
+    qDebug() << "thread started\n";
+
+    //Waiting message from Server Database
+    ui->plainTextEdit->appendPlainText("UI Thread ID: " +
+                                       QString::number(*static_cast<int*>(QThread::currentThreadId()), 16));
+
+    start();
+
+    connect(&th1, &QThread::finished, &th1, &QThread::deleteLater);
+
+    connect(m_thread1, &ConnectDb::msgResult, this, [this](const QString &msg) {
+        ui->plainTextEdit->appendPlainText(msg);
+    });
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete m_connectDb;
+    th1.quit();
+    th1.wait();
+
+    delete m_thread1;
+
     qDebug() << "~MainWindow()\n";
-}
-
-
-const int MainWindow::getCountRow() {
-    QSqlQuery query;
-    query.exec("select count (*) from UserMessages");
-
-    if (query.first()) {
-        m_rowCount = query.value(0).toInt();
-    }
-    return m_rowCount;
-}
-
-void MainWindow::on_actiongetMessage_triggered()
-{
-    QSqlQuery query;
-    query.exec("select * from UserMessages");
-    if (query.last()) {
-        ui->plainTextEdit->appendPlainText(query.value(2).toString());
-        ui->statusbar->showMessage(tr("Got message"));
-    }
-    else ui->statusbar->showMessage(tr("Something went wrong"));
-}
-
-
-void MainWindow::on_actionClear_triggered()
-{
-    ui->plainTextEdit->clear();
-}
-
-
-void MainWindow::on_actiondeleteFromDatabase_triggered()
-{
-    QSqlQuery query("delete from UserMessages where user_name = 'PC'");
-
-    if (query.exec()) {
-        ui->statusbar->showMessage("Database cleared");
-    }
-
 }
 
 void MainWindow::on_actionExit_triggered()
 {
     this->close();
 }
+
+void MainWindow::start()
+{
+    QMetaObject::invokeMethod(m_thread1, "getMsg", Qt::QueuedConnection);
+
+}
+
 

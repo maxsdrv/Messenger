@@ -1,120 +1,50 @@
 #include "mythread.h"
 
 
-MyThread::MyThread(QObject *parent) : QObject(parent), m_type(0)
+MyThread::MyThread(const QString &connectionName) : QObject(nullptr)
 {
+    //connect to remote database
+    m_database = QSqlDatabase::addDatabase("QODBC", connectionName);
+    m_database.setDatabaseName("ServerAcerDSN"); //etc/odbc.ini
+    m_database.setUserName("SA");
+    m_database.setPassword("pass202mssqlAcer");
 
+    if (!m_database.open())
+    {
+        qDebug() << m_database.lastError().text();
+    }
 }
 
 MyThread::~MyThread()
 {
-    qDebug("~MyThread()");
+    qDebug() << "~MyThread()";
 }
 
-void MyThread::setType(const int &type)
-{
-    m_type = type;
-}
+QMutex my_thread1_mutex;
 
-void MyThread::run()
+void MyThread::send_msg()
 {
-    switch (m_type) {
-    case 0:
-        thread1Worker();
-        break;
-    case 1:
-        thread2Worker();
-        break;
-    case 2:
-        thread3Worker();
-        break;
-    case 3:
-        thread4Worker();
-        break;
-    default:
-        break;
-    }
-}
+    m_database.open();
 
-QMutex mutex;
+    QString str = "Thread ID: " + QString::number(*static_cast<int*>(QThread::currentThreadId()), 16) +
+            "    result: |";
 
-void MyThread::thread1Worker()
-{
-    QString connectionName = QString::number(*static_cast<int*>(QThread::currentThreadId()));
+    my_thread1_mutex.lock();
+
+    QSqlQuery query(m_database);
+    query.exec("select * from s_Msg"); //send request
+    if (query.last()) //look last message
     {
-        mutex.lock();
-
-        QSqlDatabase db = QSqlDatabase::addDatabase("QODBC", connectionName);
-        db.setDatabaseName("ServerDSN");
-        db.setUserName("SA");
-        db.setPassword("DataSciec2019");
-        if (!db.open())
-        {
-            qDebug() << "thread 1 open db failed!";
-        }
-        mutex.unlock();
-        qDebug() << "thread 1: " << QThread::currentThreadId() << connectionName;
-    }
-    QSqlDatabase::removeDatabase(connectionName);
-}
-
-void MyThread::thread2Worker()
-{
-    QString connectionName = QString::number(*static_cast<int*>(QThread::currentThreadId()));
-    {
-        mutex.lock();
-        QSqlDatabase db = QSqlDatabase::addDatabase("QODBC", connectionName);
-        db.setDatabaseName("ServerDSN");
-        db.setUserName("SA");
-        db.setPassword("DataSciec2019");
-        if (!db.open())
-        {
-            qDebug() << "thread 2 open db failed!";
-        }
-        mutex.unlock();
-        qDebug() << "thread 2: " << QThread::currentThreadId() << connectionName;
-    }
-    QSqlDatabase::removeDatabase(connectionName);
-}
-
-void MyThread::thread3Worker()
-{
-    QString connectionName = QString::number(*static_cast<int*>(QThread::currentThreadId()));
-    {
-        mutex.lock();
-        QSqlDatabase db = QSqlDatabase::addDatabase("QODBC", connectionName);
-        db.setDatabaseName("ServerDSN");
-        db.setUserName("SA");
-        db.setPassword("DataSciec2019");
-        if (!db.open())
-        {
-            qDebug() << "thread 3 open db failed!";
-        }
-        mutex.unlock();
-        qDebug() << "thread 3: " << QThread::currentThreadId() << connectionName;
-    }
-    QSqlDatabase::removeDatabase(connectionName);
-}
-
-void MyThread::thread4Worker()
-{
-    QString connectionName = QString::number(*static_cast<int*>(QThread::currentThreadId()));
-    {
-        mutex.lock();
-        QSqlDatabase db = QSqlDatabase::addDatabase("QODBC", connectionName);
-        db.setDatabaseName("ServerDSN");
-        db.setUserName("SA");
-        db.setPassword("DataSciec2019");
-        if (!db.open())
-        {
-            qDebug() << "thread 4 open db failed!";
-        }
-        mutex.unlock();
-        qDebug() << "thread 4: " << QThread::currentThreadId() << connectionName;
+        str += QString::number(query.value(0).toInt()) + " " + query.value(1).toString() +
+                " " + query.value(2).toString() + " " + "|";
     }
 
-    QSqlDatabase::removeDatabase(connectionName);
 
+    my_thread1_mutex.unlock();
 
+    QSqlDatabase::removeDatabase(str);
+
+    emit msg_result(str + "\n");
 }
+
 
