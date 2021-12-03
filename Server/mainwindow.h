@@ -3,11 +3,10 @@
 
 #include <QMainWindow>
 #include <QThread>
-#include <QSharedPointer>
+#include <QCryptographicHash>
 
-#include "Classes/ConnectDb.h"
-#include "Classes/sendingthread.h"
-#include "Classes/gettingthread.h"
+#include "Classes/send_data.h"
+#include "Classes/get_data.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,9 +23,8 @@ private:
     Ui::MainWindow *ui;
     QThread th1;
     QThread th2;
-    SendingThread *m_thread1;
-    SendingThread *m_thread_getrows;
-//    GettingThread *m_thread2;
+    SendData *m_thread1;
+    SendData *m_thread2;
     QString m_count_rows; //storing the numbers of rows;
 private:
     void setCountRows(const QString &count);

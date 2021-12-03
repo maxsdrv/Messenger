@@ -238,14 +238,19 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/gettingthread.h",
+			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/client_window.h",
 			"MU",
-			"EODS2FLWKW/moc_gettingthread.cpp"
+			"EODS2FLWKW/moc_client_window.cpp"
 		],
 		[
-			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/sendingthread.h",
+			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/get_data.h",
 			"MU",
-			"EODS2FLWKW/moc_sendingthread.cpp"
+			"EODS2FLWKW/moc_get_data.cpp"
+		],
+		[
+			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/send_data.h",
+			"MU",
+			"EODS2FLWKW/moc_send_data.cpp"
 		],
 		[
 			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/mainwindow.h",
@@ -315,11 +320,15 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/gettingthread.cpp",
+			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/client_window.cpp",
 			"MU"
 		],
 		[
-			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/sendingthread.cpp",
+			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/get_data.cpp",
+			"MU"
+		],
+		[
+			"/home/maxim/Cpp/qt-projects/database-multithread/Messenger/Server/Classes/send_data.cpp",
 			"MU"
 		],
 		[

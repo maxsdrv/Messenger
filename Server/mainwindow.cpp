@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include <QCryptographicHash>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -8,11 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    m_thread1 = new SendingThread("thread1");
-    m_thread_getrows = new SendingThread("thread2");
+    m_thread1 = new SendData("thread1");
+    m_thread2 = new SendData("thread2");
 
     m_thread1->moveToThread(&th1);
-    m_thread_getrows->moveToThread(&th2);
+    m_thread2->moveToThread(&th2);
 
     th1.start();
     th2.start();
@@ -28,7 +29,7 @@ MainWindow::~MainWindow()
     th2.wait();
 
     delete m_thread1;
-    delete m_thread_getrows;
+    delete m_thread2;
 
     qInfo() << "~MainWindow()\n";
 
@@ -47,7 +48,7 @@ const QString &MainWindow::getCountRows() const
 
 void MainWindow::start()
 {
-    QMetaObject::invokeMethod(m_thread_getrows, "getRowsDatabase", Qt::QueuedConnection);
+    QMetaObject::invokeMethod(m_thread2, "getRowsDatabase", Qt::QueuedConnection);
     qDebug() << "QMetaObject called";
 
 }
@@ -55,9 +56,7 @@ void MainWindow::start()
 
 void MainWindow::on_sendButton_clicked()
 {
-//    ui->plainTextEdit->appendPlainText("UI Thread ID: " +
-//                                       QString::number(*static_cast<int*>(QThread::currentThreadId()), 16));
-    qDebug() << ("UI Thread ID: " +
+    qDebug() << ("UI Thread ID of Server: " +
                  QString::number(*static_cast<int*>(QThread::currentThreadId()), 16));
 
     start();
@@ -65,13 +64,14 @@ void MainWindow::on_sendButton_clicked()
     connect(&th1, &QThread::finished, &th1, &QThread::deleteLater);
     connect(&th2, &QThread::finished, &th2, &QThread::deleteLater);
 
-    connect(m_thread_getrows, &SendingThread::get_rows_result, this, [this](const QString &result) {
+    connect(m_thread2, &SendData::get_rows_result, this, [this](const QString &result) {
         this->setCountRows(result);
-    });
+    }); // lambda for calculating rows in table of database
+    //calculating hash by the algorithm md5
     auto hash = QString(QCryptographicHash::hash(getCountRows().toStdString().c_str(), QCryptographicHash::Md5).toHex());
-    auto text_for_db = ui->plainTextEdit->toPlainText();
+    auto text_for_db = ui->plainTextEdit->toPlainText(); // get message from PlainTextEdit
 
-    m_thread1->send_query(text_for_db, hash);
+    m_thread1->send_query(text_for_db, hash); //using our method for creating query to database
 
 //    connect(this, &MainWindow::query_result, m_thread1, &SendingThread::send_query);
 //    emit query_result(text_for_db, hash);
