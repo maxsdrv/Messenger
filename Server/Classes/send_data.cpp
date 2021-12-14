@@ -16,7 +16,7 @@ SendData::SendData(const QString &connectionName) : QObject(nullptr)
 
 SendData::~SendData()
 {
-    qDebug() << "~SendingThread()";
+    qDebug() << "~SendData()";
 }
 
 void SendData::send_query(const QString& msg, const QString &hash)
@@ -27,6 +27,7 @@ void SendData::send_query(const QString& msg, const QString &hash)
     qDebug() << "send_query(const QString& msg)" << msg;
     qDebug() << "hash = " << hash;
 
+    //Insert our message into database
     {
         QMutexLocker locker(&m_mutex);
         QSqlQuery query(m_database);
@@ -52,6 +53,7 @@ void SendData::getRowsDatabase()
     QString connectionName = QString::number(*static_cast<int*>(QThread::currentThreadId()));
     qDebug() << "getRowsDatabase()";
 
+    //Get number of database rows
     {
         QMutexLocker locker(&m_mutex);
         QThread::msleep(10);
@@ -69,6 +71,24 @@ void SendData::getRowsDatabase()
     qDebug() << " numbers of rows " << count_rows;
 
     emit get_rows_result(count_rows.toString());
+}
+
+void SendData::test_Emptiness(const QString &hash)
+{
+    m_database.open();
+
+    qDebug() << "Test for emptiness database";
+    {
+        QMutexLocker locker(&m_mutex);
+        QSqlQuery query(m_database);
+        query.prepare("insert into Messages values(:user_name, :message, :checksum)");
+        query.bindValue(":user_name", "SYSTEM");
+        query.bindValue(":message", "first start");
+        query.bindValue(":checksum", hash);
+        if (query.exec()) {
+            qDebug() << "Data written successfull";
+        }
+    }
 }
 
 

@@ -46,8 +46,7 @@ void ClientWindow::on_pushButton_Exit_clicked()
 }
 
 
-void ClientWindow::on_pushButton_Clear_clicked()
-{
+void ClientWindow::on_pushButton_Clear_clicked() {
     ui->ClientMessage->clear();
 }
 
@@ -57,7 +56,7 @@ void ClientWindow::cleanup()
 
     m_thread2->quit();
 
-    qDebug() << "cleanup of Client()";
+    qDebug() << "cleanup of ClientWindow()";
 }
 
 
@@ -73,7 +72,7 @@ void ClientWindow::start()
 void ClientWindow::connects_To_Database()
 {
     connect(&m_timer, &QTimer::timeout, this, &ClientWindow::start);
-    m_timer.start(1000);
+    m_timer.start(5000);
 
 
     connect(m_get_data1.get(), &GetData::hashResult, this, [this](const QString &result) {
@@ -89,7 +88,6 @@ void ClientWindow::connects_To_Database()
 
     connect(m_thread1.get(), &QThread::finished, m_thread1.get(), &QThread::deleteLater);
     connect(m_thread2.get(), &QThread::finished, m_thread2.get(), &QThread::deleteLater);
-    qDebug() << "delete later...";
 }
 
 

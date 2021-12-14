@@ -21,10 +21,12 @@ public:
     ~MainWindow();
 private:
     Ui::MainWindow *ui;
-    QThread th1;
-    QThread th2;
-    SendData *m_thread1;
-    SendData *m_thread2;
+
+    std::unique_ptr<QThread> th1;
+    std::unique_ptr<QThread> th2;
+    std::unique_ptr<SendData> m_thread1;
+    std::unique_ptr<SendData> m_thread2;
+
     QString m_count_rows; //storing the numbers of rows;
 private:
     void setCountRows(const QString &count);
@@ -38,5 +40,6 @@ private slots:
     void on_clearButton_clicked();
     void on_exitButton_clicked();
 
+    void cleanup();
 };
 #endif // MAINWINDOW_H

@@ -21,6 +21,7 @@ signals:
 public slots:
     void send_query(const QString &msg, const QString &hash);
     void getRowsDatabase();
+    void test_Emptiness(const QString &hash);
 private:
     QSqlDatabase m_database;
     mutable QMutex m_mutex;
